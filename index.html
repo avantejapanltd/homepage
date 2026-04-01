@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社AVANTE JAPAN｜スポーツで世界を豊かに｜SUPPORTER OF GRIT</title>
+<meta name="description" content="株式会社AVANTE JAPANは「SUPPORTER OF GRIT」を掲げ、インバウンドサッカー教室・スポーツ学童・国際スポーツマネジメントの3事業でスポーツを通した人生の豊かさを創出します。">
+<meta name="keywords" content="AVANTE JAPAN,サッカー教室,スポーツ学童,インバウンド,FIFAエージェント,町田,SUPPORTER OF GRIT">
+<style>
+  :root{--navy:#2D4A6B;--navy-deep:#1A2E45;--red:#E63946;--white:#FFFFFF;--off:#F8F9FA;--gray:#6C757D;--border:#E9ECEF;--text:#1C2B3A;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+
+  /* ─── NAV ─── */
+  nav.top-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(26,46,69,.97);backdrop-filter:blur(10px);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;}
+  .nav-logo{font-size:16px;font-weight:900;color:#fff;letter-spacing:.1em;text-decoration:none;}
+  .nav-logo span{color:var(--red);}
+  .nav-right{display:flex;align-items:center;gap:28px;}
+  .nav-link{color:rgba(255,255,255,.65);text-decoration:none;font-size:12.5px;font-weight:500;letter-spacing:.07em;transition:color .2s;cursor:pointer;white-space:nowrap;}
+  .nav-link:hover{color:#fff;}
+  .nav-ig{display:inline-flex;align-items:center;color:rgba(255,255,255,.55);transition:color .2s;}
+  .nav-ig:hover{color:#fff;}
+  .nav-ig svg{width:18px;height:18px;}
+  .nav-contact{background:var(--red);color:#fff!important;padding:7px 18px;border-radius:3px;font-weight:700!important;font-size:12px!important;letter-spacing:.08em!important;}
+  .nav-contact:hover{opacity:.86;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:1.5px;background:#fff;border-radius:2px;}
+  .nav-mobile{display:none;position:fixed;top:58px;left:0;right:0;background:var(--navy-deep);z-index:299;padding:20px 24px;flex-direction:column;gap:16px;}
+  .nav-mobile.open{display:flex;}
+  .nav-mobile a{color:rgba(255,255,255,.7);text-decoration:none;font-size:15px;font-weight:500;cursor:pointer;}
+
+  /* ─── TAB BAR ─── */
+  .tab-bar{position:fixed;top:58px;left:0;right:0;z-index:290;background:#111f2e;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:stretch;}
+  .tab-bar a{display:inline-flex;align-items:center;gap:7px;padding:0 28px;height:44px;color:rgba(255,255,255,.42);text-decoration:none;font-size:11.5px;font-weight:600;letter-spacing:.09em;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .tab-bar a svg{width:13px;height:13px;opacity:.7;}
+  .tab-bar a:hover{color:rgba(255,255,255,.8);}
+  .tab-bar a.active{color:#fff;border-bottom-color:var(--red);}
+  .tab-bar a.active svg{opacity:1;}
+  .tab-spacer{flex:1;}
+
+  /* ─── PAGE OFFSET ─── */
+  .page-wrap{padding-top:102px;}
+
+  /* ─── HERO ─── */
+  #hero{min-height:100vh;background:var(--navy-deep);display:flex;align-items:center;position:relative;overflow:hidden;}
+  .hero-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");opacity:.4;}
+  .hero-grad{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 90% 50%,rgba(230,57,70,.11) 0%,transparent 65%),radial-gradient(ellipse 40% 80% at 10% 60%,rgba(45,74,107,.55) 0%,transparent 55%);}
+  .hero-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:72px 72px;}
+  .hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:80px 48px;width:100%;}
+  .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.28em;color:rgba(230,57,70,.9);text-transform:uppercase;margin-bottom:36px;}
+  .hero-grit{font-size:clamp(56px,9vw,108px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:12px;text-transform:uppercase;}
+  .hero-grit .word-of{font-size:clamp(28px,4.5vw,54px);font-weight:300;letter-spacing:.15em;display:block;color:rgba(255,255,255,.38);text-transform:uppercase;margin-bottom:4px;}
+  .hero-grit .word-supporter{display:block;}
+  .hero-grit .word-grit{display:block;color:var(--red);-webkit-text-stroke:1px var(--red);}
+  .hero-divider{width:56px;height:1px;background:rgba(255,255,255,.2);margin:32px 0;}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.5);line-height:1.9;max-width:520px;font-weight:400;}
+  .hero-coming{font-size:10px;font-weight:700;letter-spacing:.32em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-top:24px;}
+  .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.28);font-size:9.5px;letter-spacing:.18em;animation:scrollFloat 2.6s ease-in-out infinite;}
+  .hero-scroll::after{content:'';width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.28),transparent);}
+  @keyframes scrollFloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+  /* ─── SECTION COMMONS ─── */
+  section{padding:96px 48px;}
+  .container{max-width:1100px;margin:0 auto;}
+  .sec-label{font-size:10px;font-weight:700;letter-spacing:.28em;color:var(--red);text-transform:uppercase;margin-bottom:12px;}
+  .sec-title{font-size:clamp(26px,3.8vw,42px);font-weight:900;color:var(--navy-deep);line-height:1.2;letter-spacing:-.025em;margin-bottom:16px;}
+  .sec-body{font-size:15.5px;color:var(--gray);line-height:1.95;max-width:640px;}
+  .divider{width:40px;height:2px;background:var(--red);margin:0 0 32px;}
+
+  /* ─── MISSION ─── */
+  #mission{background:var(--off);}
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .mission-quote{font-size:clamp(18px,2.2vw,25px);font-weight:800;color:var(--navy-deep);line-height:1.7;padding-left:20px;border-left:3px solid var(--red);}
+  .mission-body{font-size:15.5px;color:var(--gray);line-height:2;}
+
+  /* ─── BUSINESS ─── */
+  #business{background:#fff;}
+  .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+  .biz-card{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;text-decoration:none;display:block;transition:transform .28s cubic-bezier(.25,.8,.25,1),box-shadow .28s;}
+  .biz-card:hover{transform:translateY(-6px);box-shadow:0 20px 52px rgba(26,46,69,.1);}
+  .biz-head{background:var(--navy-deep);padding:36px 32px 28px;position:relative;overflow:hidden;}
+  .biz-head::after{content:'';position:absolute;bottom:-20px;right:20px;width:80px;height:80px;background:rgba(230,57,70,.08);border-radius:50%;}
+  .biz-num{font-size:9.5px;font-weight:700;letter-spacing:.24em;color:rgba(230,57,70,.8);margin-bottom:20px;text-transform:uppercase;}
+  .biz-icon{width:36px;height:36px;color:rgba(255,255,255,.28);margin-bottom:16px;display:block;}
+  .biz-icon svg{width:100%;height:100%;}
+  .biz-title{font-size:16px;font-weight:800;color:#fff;line-height:1.45;position:relative;z-index:1;}
+  .biz-body{padding:26px 30px 30px;}
+  .biz-desc{font-size:13.5px;color:var(--gray);line-height:1.9;margin-bottom:20px;}
+  .biz-cta{display:inline-flex;align-items:center;gap:7px;color:var(--navy);font-size:12.5px;font-weight:700;letter-spacing:.04em;transition:gap .2s;}
+  .biz-cta::after{content:'→';}
+  .biz-card:hover .biz-cta{gap:11px;}
+
+  /* ─── CEO ─── */
+  #ceo{background:var(--off);}
+  .ceo-grid{display:grid;grid-template-columns:240px 1fr;gap:72px;align-items:start;}
+  .ceo-name{font-size:30px;font-weight:900;color:var(--navy-deep);letter-spacing:.04em;margin-bottom:4px;}
+  .ceo-name-en{font-size:12px;color:var(--gray);font-weight:500;letter-spacing:.12em;margin-bottom:16px;}
+  .ceo-badge{display:inline-block;background:var(--navy-deep);color:#fff;font-size:11px;font-weight:700;letter-spacing:.09em;padding:6px 14px;border-radius:2px;margin-bottom:24px;}
+  .ceo-meta{display:flex;flex-direction:column;gap:8px;}
+  .ceo-meta-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--gray);}
+  .ceo-dot{width:5px;height:5px;background:var(--red);border-radius:50%;flex-shrink:0;}
+  .ceo-text{font-size:15.5px;color:var(--text);line-height:2.05;}
+
+  /* ─── COMPANY ─── */
+  #company-info{background:#fff;}
+  .info-table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  .info-table tr{border-bottom:1px solid var(--border);}
+  .info-table tr:first-child{border-top:1px solid var(--border);}
+  .info-table th{text-align:left;padding:18px 22px;color:var(--navy);font-weight:700;font-size:12px;width:160px;letter-spacing:.05em;}
+  .info-table td{padding:18px 22px;color:var(--text);line-height:1.7;}
+  .info-table a{color:var(--navy);font-weight:600;text-decoration:none;}
+  .info-table a:hover{color:var(--red);}
+
+  /* ─── CONTACT ─── */
+  #contact-section{background:var(--navy-deep);}
+  .contact-inner{text-align:center;}
+  .contact-title{font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;letter-spacing:-.025em;margin-bottom:16px;}
+  .contact-sub{font-size:15px;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:44px;}
+  .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:14px 32px;border-radius:3px;transition:background .2s,transform .2s;letter-spacing:.04em;}
+  .btn-red:hover{background:#c5303c;transform:translateY(-2px);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:9px;background:transparent;color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:14px 32px;border-radius:3px;border:1.5px solid rgba(255,255,255,.25);transition:border-color .2s,background .2s;letter-spacing:.04em;}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.05);}
+  .btn-ghost svg{width:18px;height:18px;}
+
+  /* ─── FOOTER ─── */
+  footer{background:#0D1922;padding:36px 48px;}
+  .ft-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:20px;}
+  .ft-logo{font-size:15px;font-weight:900;color:#fff;letter-spacing:.09em;text-decoration:none;}
+  .ft-logo span{color:var(--red);}
+  .ft-nav{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+  .ft-nav a{color:rgba(255,255,255,.38);text-decoration:none;font-size:12px;cursor:pointer;transition:color .2s;}
+  .ft-nav a:hover{color:rgba(255,255,255,.75);}
+  .ft-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  .ft-copy{font-size:11px;color:rgba(255,255,255,.22);}
+  .ft-ig{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.42);text-decoration:none;font-size:12px;font-weight:600;transition:color .2s;}
+  .ft-ig:hover{color:rgba(255,255,255,.8);}
+  .ft-ig svg{width:16px;height:16px;}
+
+  /* ─── COMING SOON ─── */
+  .cs-wrap{min-height:calc(100vh - 102px);display:flex;align-items:center;justify-content:center;background:var(--navy-deep);padding:60px 40px;text-align:center;position:relative;overflow:hidden;}
+  .cs-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;}
+  .cs-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(230,57,70,.09) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+  .cs-content{position:relative;z-index:1;max-width:580px;}
+  .cs-tag{display:inline-block;border:1px solid rgba(230,57,70,.4);color:var(--red);font-size:10px;font-weight:700;letter-spacing:.24em;padding:6px 16px;border-radius:2px;margin-bottom:32px;text-transform:uppercase;}
+  .cs-icon-wrap{width:64px;height:64px;color:rgba(255,255,255,.18);margin:0 auto 28px;}
+  .cs-icon-wrap svg{width:100%;height:100%;}
+  .cs-title{font-size:clamp(26px,5vw,52px);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.025em;margin-bottom:14px;}
+  .cs-soon{font-size:10px;font-weight:700;letter-spacing:.32em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:28px;}
+  .cs-desc{font-size:15px;color:rgba(255,255,255,.48);line-height:1.95;margin-bottom:48px;}
+  .cs-back{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.48);font-size:13px;font-weight:600;text-decoration:none;transition:color .2s,border-color .2s;border:1px solid rgba(255,255,255,.15);padding:11px 26px;border-radius:3px;letter-spacing:.06em;}
+  .cs-back:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+  .cs-back::before{content:'←';margin-right:2px;}
+
+  /* ─── FADE IN ─── */
+  .fi{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .fi.on{opacity:1;transform:none;}
+  .fi.d1{transition-delay:.08s;}
+  .fi.d2{transition-delay:.16s;}
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:920px){
+    nav.top-nav{padding:0 20px;}
+    .nav-right{gap:16px;}
+    .nav-link:not(.nav-contact):not(.nav-ig){display:none;}
+    .hamburger{display:flex;}
+    .tab-bar a{padding:0 18px;font-size:11px;}
+    section{padding:64px 20px;}
+    footer{padding:28px 20px;}
+    .mission-grid{grid-template-columns:1fr;gap:40px;}
+    .biz-grid{grid-template-columns:1fr;gap:16px;}
+    .ceo-grid{grid-template-columns:1fr;gap:32px;}
+    .ft-top{flex-direction:column;}
+    .ft-bottom{flex-direction:column;}
+    .btn-group{flex-direction:column;align-items:center;}
+    .hero-inner{padding:64px 20px;}
+  }
+  @media(max-width:480px){
+    .tab-bar a span{display:none;}
+    .tab-bar a svg{width:15px;height:15px;}
+    .tab-bar a{padding:0 16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-logo" href="index.html">AVANTE<span>.</span>JAPAN</a>
+  <div class="nav-right">
+    <a class="nav-link nav-contact" href="index.html#contact-section">お問い合わせ</a>
+    <a class="nav-ig" href="https://www.instagram.com/avante.grit2026/" target="_blank" rel="noopener" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a class="nav-ig" href="https://www.youtube.com/@AVANTEJP" target="_blank" rel="noopener" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <div class="hamburger" onclick="document.getElementById('mob-nav').classList.toggle('open')"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="nav-mobile" id="mob-nav">
+  <a href="index.html#contact-section" onclick="document.getElementById('mob-nav').classList.remove('open')">お問い合わせ</a>
+  <a href="https://www.instagram.com/avante.grit2026/" target="_blank" rel="noopener">Instagram @avante.grit2026</a>
+</div>
+<div class="tab-bar">
+<a href="index.html" class="active"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg><span>トップ</span></a>
+<a href="inbound.html"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/><path d="M24 4C24 4 16 12 16 24C16 36 24 44 24 44" stroke="currentColor" stroke-width="2"/><path d="M24 4C24 4 32 12 32 24C32 36 24 44 24 44" stroke="currentColor" stroke-width="2"/><path d="M4 24H44" stroke="currentColor" stroke-width="2"/><path d="M6 14H42" stroke="currentColor" stroke-width="2"/><path d="M6 34H42" stroke="currentColor" stroke-width="2"/></svg><span>インバウンド</span></a>
+<a href="gakudo.html"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6L44 18V30L24 42L4 30V18L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 6V42" stroke="currentColor" stroke-width="2"/><path d="M4 18L44 18" stroke="currentColor" stroke-width="2"/><path d="M4 30L44 30" stroke="currentColor" stroke-width="2"/></svg><span>学童</span></a>
+<a href="management.html"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="12" r="6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="36" r="6" stroke="currentColor" stroke-width="2"/><circle cx="40" cy="36" r="6" stroke="currentColor" stroke-width="2"/><path d="M24 18V28M24 28L8 30M24 28L40 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>マネジメント</span></a>
+<div class="tab-spacer"></div>
+</div>
+
+<div class="page-wrap">
+
+<!-- ── HERO ── -->
+<div id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">株式会社 AVANTE JAPAN</p>
+    <h1 class="hero-grit">
+      <span class="word-of">SUPPORTER OF</span>
+      <span class="word-grit">GRIT</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">諦めない力を持つすべての人へ。スポーツを通して子どもの可能性を拡げ、アスリートの夢を世界へ繋ぐ。それが私たちのミッションです。</p>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</div>
+
+<!-- ── MISSION ── -->
+<section id="mission">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="fi">
+        <div class="sec-label">Mission</div>
+        <div class="divider"></div>
+        <blockquote class="mission-quote">
+          やり抜く力を持つ人を、<br>スポーツの力で支える。<br>それが AVANTE JAPAN の<br>存在意義です。
+        </blockquote>
+      </div>
+      <div class="fi d1">
+        <p class="mission-body">未来ある子どもたちの無限の可能性を引き出し、夢に向かってやり抜こうとするアスリートの背中を押す。私たちは単なるスポーツ事業者ではなく、「人の成長に伴走するパートナー」として、スポーツを通じて日本と世界の人々の心と人生を豊かにすることを最大のミッションに掲げています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUSINESS ── -->
+<section id="business">
+  <div class="container">
+    <div class="fi">
+      <div class="sec-label">Business</div>
+      <h2 class="sec-title">3つの事業領域</h2>
+      <p class="sec-body">スポーツの持つ「育てる力・繋ぐ力・変える力」を軸に、子どもの育成から国際舞台まで3つのフィールドで価値を創出します。</p>
+    </div>
+    <div class="biz-grid">
+
+      <a class="biz-card fi d1" href="inbound.html">
+        <div class="biz-head">
+          <div class="biz-num">Business 01</div>
+          <div class="biz-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/><path d="M24 4C24 4 16 12 16 24C16 36 24 44 24 44" stroke="currentColor" stroke-width="2"/><path d="M24 4C24 4 32 12 32 24C32 36 24 44 24 44" stroke="currentColor" stroke-width="2"/><path d="M4 24H44" stroke="currentColor" stroke-width="2"/><path d="M6 14H42" stroke="currentColor" stroke-width="2"/><path d="M6 34H42" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3 class="biz-title">インバウンドサッカー教室</h3>
+        </div>
+        <div class="biz-body">
+          <p class="biz-desc">世界が注目する日本サッカーを、アジア富裕層向けのプレミアム体験として提供。Jリーグクラブとのコラボレーションによる本格的な育成・観戦・VIPプログラムで、インバウンド需要と地域活性化を同時に実現します。</p>
+          <div class="biz-cta">詳細を見る</div>
+        </div>
+      </a>
+
+      <a class="biz-card fi d1" href="gakudo.html">
+        <div class="biz-head">
+          <div class="biz-num">Business 02</div>
+          <div class="biz-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6L44 18V30L24 42L4 30V18L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 6V42" stroke="currentColor" stroke-width="2"/><path d="M4 18L44 18" stroke="currentColor" stroke-width="2"/><path d="M4 30L44 30" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3 class="biz-title">スポーツ学童</h3>
+        </div>
+        <div class="biz-body">
+          <p class="biz-desc">スポーツ×英会話に特化した次世代型学童保育。科学的な運動プログラムと英語教育を組み合わせ、身体と知性を同時に育みます。送迎までをワンストップで担い、共働き家庭が抱える「時間の悩み」を解消します。</p>
+          <div class="biz-cta">詳細を見る</div>
+        </div>
+      </a>
+
+      <a class="biz-card fi d2" href="management.html">
+        <div class="biz-head">
+          <div class="biz-num">Business 03</div>
+          <div class="biz-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="12" r="6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="36" r="6" stroke="currentColor" stroke-width="2"/><circle cx="40" cy="36" r="6" stroke="currentColor" stroke-width="2"/><path d="M24 18V28M24 28L8 30M24 28L40 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3 class="biz-title">国際スポーツマネジメント</h3>
+        </div>
+        <div class="biz-body">
+          <p class="biz-desc">FIFA公認エージェント資格を軸に、日本人選手の海外移籍はもちろん、外国人選手のJリーグ参入やキャリア構築まで、国籍を問わずアスリートを全面サポート。代理人業にとどまらず、発展途上国でのサッカースクール設立を通じた国際貢献も視野に入れています。</p>
+          <div class="biz-cta">詳細を見る</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CEO ── -->
+<section id="ceo">
+  <div class="container">
+    <div class="ceo-grid">
+      <div class="fi">
+        <div class="sec-label">Representative</div>
+        <div class="divider"></div>
+        <div class="ceo-name">和知 健太</div>
+        <div class="ceo-name-en">Kenta Wachi</div>
+        <div class="ceo-badge">代表取締役社長</div>
+        <div class="ceo-meta">
+          <div class="ceo-meta-item"><div class="ceo-dot"></div>1999年生まれ、東京都町田市出身</div>
+          <div class="ceo-meta-item"><div class="ceo-dot"></div>株式会社AVANTE JAPAN 創業者</div>
+        </div>
+      </div>
+      <div class="fi d1">
+        <p class="ceo-text">1999年生まれ、東京都町田市出身。高校卒業後、海外でのプロサッカー選手としてのキャリアを追求。留学エージェントに依存せず、自ら100以上の海外クラブへ直接アプローチし、複数の契約を独力で実現。<br><br>2024年、アメリカでの挑戦を終え現役を引退。現場での指導経験とプレーヤーとしての経験から「スポーツには人の人生を変える力がある」と確信し、創業を決意。<br><br>「SUPPORTER OF GRIT」を企業理念に掲げ、諦めない力を持つすべての人が輝ける社会の実現を目指す。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPANY INFO ── -->
+<section id="company-info">
+  <div class="container">
+    <div class="fi">
+      <div class="sec-label">Company</div>
+      <h2 class="sec-title">会社情報</h2>
+    </div>
+    <table class="info-table fi d1">
+      <tr><th>会社名</th><td>株式会社AVANTE JAPAN</td></tr>
+      <tr><th>代表取締役</th><td>和知 健太</td></tr>
+      <tr><th>設立</th><td>2026年2月</td></tr>
+      <tr><th>資本金</th><td>10万円</td></tr>
+      <tr><th>所在地</th><td>〒194-0013 東京都町田市原町田6丁目9-8<br>AETA MACHIDA 4F BUSO AGORA</td></tr>
+      <tr><th>事業内容</th><td>インバウンドサッカー教室 / スポーツ学童 / 国際スポーツマネジメント</td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/avante.grit2026/" target="_blank" rel="noopener">@avante.grit2026</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact-section">
+  <div class="container">
+    <div class="contact-inner fi">
+      <h2 class="contact-title">お問い合わせ</h2>
+      <p class="contact-sub">協賛・取材・事業提携・スポンサーシップ・選手マネジメントのご依頼など、<br>あらゆるお問い合わせをお待ちしております。</p>
+      <div class="btn-group">
+        <a class="btn-red" href="mailto:info@avantejp.com">メールで問い合わせる</a>
+        <a class="btn-ghost" href="https://www.instagram.com/avante.grit2026/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram を見る</a>
+        <a class="btn-ghost" href="https://www.youtube.com/@AVANTEJP" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <a class="ft-logo" href="index.html">AVANTE<span>.</span>JAPAN</a>
+    <nav class="ft-nav">
+      <a href="index.html#contact-section">お問い合わせ</a>
+      <a href="inbound.html">インバウンド</a>
+      <a href="gakudo.html">学童</a>
+      <a href="management.html">マネジメント</a>
+    </nav>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 株式会社AVANTE JAPAN. All rights reserved.</div>
+    <a class="ft-ig" href="https://www.instagram.com/avante.grit2026/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> @avante.grit2026</a>
+    <a class="ft-ig" href="https://www.youtube.com/@AVANTEJP" target="_blank" rel="noopener" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a>
+  </div>
+</footer>
+</div>
+<script>
+(function(){
+  var o=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');}});},{threshold:0.1});
+  document.querySelectorAll('.fi').forEach(function(el){o.observe(el);});
+})();
+</script>
+</body>
+</html>
